@@ -1,0 +1,9 @@
+# Blender
+*.blend[1-9]
+*.blend?
+__pycache__/
+*.pyc
+
+# Operating System Files
+.DS_Store
+Thumbs.db
