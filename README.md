@@ -8,7 +8,7 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
     <thead>
     <tr>
         <th>Dresden</th>
-        <th>Schloss Neuschwanstein</th>
+        <th>Neuschwanstein</th>
         <th>Zugspitze</th>
     </tr>
     </thead>
