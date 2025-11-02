@@ -1,5 +1,7 @@
 # SvelteKit-Godot Integration: 3D Tour Plan Visualization
 
+(Work in Progress)
+
 This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
 
 ## 🚀 Motivation
@@ -42,13 +44,3 @@ To get a local copy up and running, follow these simple steps.
     npm run dev
     ```
 4.  Open the Godot project in the Godot Engine and export it for the web.
-
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
