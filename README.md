@@ -2,6 +2,8 @@
 
 (Work in Progress)
 
+This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
+
 <table>
     <thead>
     <tr>
@@ -24,8 +26,6 @@
     </tr>
     </tbody>
 </table>
-
-This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
 
 ## 🚀 Motivation
 
