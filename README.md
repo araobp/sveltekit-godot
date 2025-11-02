@@ -42,28 +42,3 @@ The primary goal of this project is to showcase how to build a rich, interactive
 *   **SvelteKit:** A modern web application framework for building high-performance web apps.
 *   **Godot:** A powerful open-source game engine for creating 2D and 3D games and interactive experiences.
 *   **Gemini:** Used for generating the images and textures for the 3D models.
-
-## 🏁 Getting Started
-
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-*   Node.js and npm installed.
-*   Godot Engine installed.
-
-### Installation
-
-1.  Clone the repo:
-    ```sh
-    git clone https://github.com/your_username/gemini-anime.git
-    ```
-2.  Install NPM packages:
-    ```sh
-    npm install
-    ```
-3.  Run the SvelteKit development server:
-    ```sh
-    npm run dev
-    ```
-4.  Open the Godot project in the Godot Engine and export it for the web.
