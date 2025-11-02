@@ -2,6 +2,29 @@
 
 (Work in Progress)
 
+<table>
+    <thead>
+    <tr>
+        <th>Berlin</th>
+        <th>Dresden</th>
+        <th>Zugspitze</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <img src="germany/Gemini_Generated_Image_e9k8qie9k8qie9k8.png" width=400>
+        </td>
+        <td>
+            <img src="germany/Gemini_Generated_Image_u05sg1u05sg1u05s.png" width=400>
+        </td>
+        <td>
+            <img src="germany/Gemini_Generated_Image_kzi3u2kzi3u2kzi3.png" width=400>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
 This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
 
 ## 🚀 Motivation
