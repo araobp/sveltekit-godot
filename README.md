@@ -4,15 +4,6 @@
 
 This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
 
-```
-       SvelteKit 5
-+------+
-|Server|<------> [Client for 2D UI]
-|      |<------> [HTML5 app generated with Godot for 3D UI]
-+------+
- Node.js
-```
-
 <table>
     <tr>
         <td>
@@ -27,6 +18,14 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
     </tr>
 </table>
 
+```
+       SvelteKit 5
++------+
+|Server|<------> [Client for 2D UI]
+|      |<------> [HTML5 app generated with Godot for 3D UI]
++------+
+ Node.js
+```
 => [Demo: a staic web site to demonstrate the Godot part](https://araobp.github.io/sveltekit-godot/demo/)
 
 ## 🚀 Motivation
