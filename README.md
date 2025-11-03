@@ -5,26 +5,17 @@
 This project demonstrates a powerful integration between SvelteKit and Godot, creating a web application that visualizes a tour plan in a 3D environment. The 3D assets and imagery are generated with the help of Gemini.
 
 <table>
-    <thead>
-    <tr>
-        <th>Dresden</th>
-        <th>Neuschwanstein</th>
-        <th>Zugspitze</th>
-    </tr>
-    </thead>
-    <tbody>
     <tr>
         <td>
-            <img src="germany/Gemini_Generated_Image_u05sg1u05sg1u05s.png" width=400>
+            <img src="germany/Gemini_Generated_Image_u05sg1u05sg1u05s.png">
         </td>
         <td>
-            <img src="germany/Gemini_Generated_Image_9odrjf9odrjf9odr.png" width=400>
+            <img src="germany/Gemini_Generated_Image_9odrjf9odrjf9odr.png">
         </td>
         <td>
-            <img src="germany/Gemini_Generated_Image_kzi3u2kzi3u2kzi3.png" width=400>
+            <img src="germany/Gemini_Generated_Image_kzi3u2kzi3u2kzi3.png">
         </td>
     </tr>
-    </tbody>
 </table>
 
 ## 🚀 Motivation
