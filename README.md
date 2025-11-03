@@ -11,7 +11,6 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
 |      |<------> [HTML5 app generated with Godot for 3D UI]
 +------+
  Node.js
-
 ```
 
 <table>
