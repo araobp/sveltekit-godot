@@ -22,6 +22,11 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
 
 The primary goal of this project is to showcase how to build a rich, interactive web experience by combining the strengths of a modern web framework (SvelteKit) with a powerful 3D game engine (Godot). This allows for the creation of immersive 3D visualizations within a standard web application.
 
+<img src="docs/godot-html5.jpg" width=600>
+
+The above is a Godot scene in the SvelteKit app
+
+
 ## ✨ Features
 
 *   **3D Tour Visualization:** Explore a tour plan in a 3D environment.
