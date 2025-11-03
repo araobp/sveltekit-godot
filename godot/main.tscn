@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxydsb3ub7npf"]
+[gd_scene load_steps=13 format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="Script" uid="uid://b6b6r6vixcghm" path="res://visitor.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cnigq4ud4m5qj" path="res://Panels/display.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://qr32njsaxi8v" path="res://Museum/museum.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bckoeiohgp4i6" path="res://forward.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cnis2oxrc5afa" path="res://forward_pressed.png" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,13 +33,6 @@ size = Vector3(20, 1, 20)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lquwl"]
 radius = 0.3
 height = 1.7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0)
 
 [node name="Node3D" type="Node3D"]
 
@@ -124,79 +119,54 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Theme" type="Theme" parent="CanvasLayer/Control"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
-[node name="Forward" type="Button" parent="CanvasLayer/Control"]
+[node name="Forward" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 400.0
-offset_right = 690.0
-offset_bottom = 545.0
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "↑"
+offset_left = 560.0
+offset_top = 480.0
+offset_right = 740.0
+offset_bottom = 840.0
+scale = Vector2(0.178, 0.178)
+texture_normal = ExtResource("4_1bvp3")
+texture_pressed = ExtResource("5_lquwl")
 
-[node name="Backward" type="Button" parent="CanvasLayer/Control"]
+[node name="Right" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 510.0
-offset_right = 690.0
-offset_bottom = 655.0
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "↓"
+offset_left = 656.00006
+offset_top = 544.0
+offset_right = 836.00006
+offset_bottom = 904.0
+rotation = 1.5707964
+scale = Vector2(0.178, 0.178)
+texture_normal = ExtResource("4_1bvp3")
+texture_pressed = ExtResource("5_lquwl")
 
-[node name="Left" type="Button" parent="CanvasLayer/Control"]
+[node name="Left" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 399.0
-offset_top = 447.0
-offset_right = 599.0
-offset_bottom = 592.0
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "←"
+offset_left = 495.99994
+offset_top = 576.00006
+offset_right = 675.99994
+offset_bottom = 936.00006
+rotation = -1.5707964
+scale = Vector2(0.178, 0.178)
+texture_normal = ExtResource("4_1bvp3")
+texture_pressed = ExtResource("5_lquwl")
 
-		<Button name="Sprint" layout_mode="2" text="Sprint">
-			<RectA
-
-[node name="Release Mouse" type="Button" parent="CanvasLayer/Control"]
+[node name="Backward" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 160.0
-offset_bottom = 60.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "Release Mouse"
+offset_left = 592.0
+offset_top = 640.00006
+offset_right = 772.0
+offset_bottom = 1000.00006
+rotation = 3.1415927
+scale = Vector2(0.178, 0.178)
+texture_normal = ExtResource("4_1bvp3")
+texture_pressed = ExtResource("5_lquwl")
 
-[node name="Right" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 447.0
-offset_right = 776.0
-offset_bottom = 592.0
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "→"
-
-[node name="Jump" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 705.0
-offset_top = 517.0
-offset_right = 905.0
-offset_bottom = 662.0
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
-text = "⎵"
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 608.0
+offset_right = 494.0
+offset_bottom = 632.0
+text = "Press mouse wheel button to activate camera rotation mode"
 
 [editable path="museum"]
