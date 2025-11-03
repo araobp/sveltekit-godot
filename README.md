@@ -42,3 +42,14 @@ The primary goal of this project is to showcase how to build a rich, interactive
 *   **SvelteKit:** A modern web application framework for building high-performance web apps.
 *   **Godot:** A powerful open-source game engine for creating 2D and 3D games and interactive experiences.
 *   **Gemini:** Used for generating the images and textures for the 3D models.
+
+## ⚙️ Integration
+
+To integrate the Godot application into the SvelteKit app, follow these steps:
+
+1.  **Export Godot Project:** Open your Godot project. Go to `Project` -> `Export...`.
+2.  **Add HTML5 Preset:** If you don't have an HTML5 preset, click `Add...` and select `HTML5`.
+3.  **Set Export Path:** In the HTML5 preset settings, set the `Path` to `app/static/` within your project directory. This will export the Godot project directly into the SvelteKit static assets folder.
+4.  **Export:** Click `Export Project`.
+
+After exporting, the Godot application files (e.g., `godot.html`, `godot.js`, `godot.wasm`, `godot.pck`) will be available in the `app/static/` directory of your SvelteKit project, ready to be served.
