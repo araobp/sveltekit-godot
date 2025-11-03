@@ -8,7 +8,7 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
        SvelteKit 5
 +------+
 |Server|<------> [Client]
-|      |<------> [(/static) HTML5 app generated with Godot]
+|      |<------> [HTML5 app generated with Godot]
 +------+
  Node.js
 
