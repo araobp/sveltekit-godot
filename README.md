@@ -55,7 +55,7 @@ After exporting, the Godot application files (e.g., `godot.html`, `godot.js`, `g
 ```
 Workflow
 
-Generate images with Gemini => Generate video with Flow
+Generate anime images with Gemini => Generate video with Flow
 ```
 
 https://github.com/user-attachments/assets/55131ea5-d56c-41db-82bc-a1dc717cc05c
