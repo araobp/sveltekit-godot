@@ -18,6 +18,16 @@ This project demonstrates a powerful integration between SvelteKit and Godot, cr
     </tr>
 </table>
 
+```
+       SvelteKit 5
++------+
+|Server|<------> [Client for 2D UI]
+|      |<------> [HTML5 app generated with Godot for 3D UI]
++------+
+ Node.js
+```
+=> [Demo: a staic web site to demonstrate the Godot part](https://araobp.github.io/sveltekit-godot/demo/)
+
 ## 🚀 Motivation
 
 The primary goal of this project is to showcase how to build a rich, interactive web experience by combining the strengths of a modern web framework (SvelteKit) with a powerful 3D game engine (Godot). This allows for the creation of immersive 3D visualizations within a standard web application.
