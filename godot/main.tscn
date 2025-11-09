@@ -1,5 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bxydsb3ub7npf"]
 
+[ext_resource type="LightmapGIData" uid="uid://chjm25lleuwcq" path="res://main.lmbake" id="1_272bh"]
 [ext_resource type="Script" uid="uid://b6b6r6vixcghm" path="res://visitor.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cnigq4ud4m5qj" path="res://Panels/display.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://qr32njsaxi8v" path="res://Museum/museum.tscn" id="3_h2yge"]
@@ -7,21 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cnis2oxrc5afa" path="res://forward_pressed.png" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://csefpg7q1xgtw" path="res://Scripts/manager.gd" id="7_272bh"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5vw27"]
 
-[sub_resource type="Sky" id="Sky_0xm2m"]
-sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
-
-[sub_resource type="Environment" id="Environment_h2yge"]
-background_mode = 2
-sky = SubResource("Sky_0xm2m")
-ambient_light_source = 2
-ambient_light_color = Color(0.6398877, 0.63988805, 0.6398878, 1)
-ambient_light_energy = 0.2
-tonemap_mode = 2
-ssao_enabled = true
+[sub_resource type="Sky" id="Sky_kek77"]
+sky_material = SubResource("PanoramaSkyMaterial_5vw27")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_272bh"]
 
@@ -35,7 +25,6 @@ viewport_path = NodePath("LargeDisplay/SubViewport")
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_5vw27")
 emission_enabled = true
-emission_energy_multiplier = 0.7
 emission_texture = SubResource("ViewportTexture_7mycd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
@@ -59,13 +48,11 @@ size = Vector3(20, 1, 20)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.8410485, 0.46848494, -0.27047992, 2.7805946e-08, 0.49999994, 0.86602545, 0.5409598, -0.7283694, 0.42052418, 0, 0, 0)
-visible = false
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_h2yge")
+[node name="LightmapGI" type="LightmapGI" parent="."]
+interior = true
+environment_mode = 0
+environment_custom_sky = SubResource("Sky_kek77")
+light_data = ExtResource("1_272bh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -127,36 +114,8 @@ text = "Press mouse wheel button to activate camera rotation mode"
 
 [node name="museum" parent="." instance=ExtResource("3_h2yge")]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.1298032, 2.9333878, -5.002507)
-light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 60.0
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.1135416, 2.9333878, -5.002507)
-light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 60.0
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.1296713, 2.9333878, 4.992162)
-light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 60.0
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.1270461, 2.9333878, 4.992162)
-light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 60.0
-
 [node name="LargeDisplay" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5.6824803e-08, -0.813, 3.1996738e-08, 0, -3.5537358e-08, -0.732, 1.3, -3.5537358e-08, 1.3986218e-15, 4.859, 1.496, -4)
+transform = Transform3D(-5.6824803e-08, -0.813, 3.1996738e-08, 0, -3.5537358e-08, -0.732, 1.3, -3.5537358e-08, 1.3986218e-15, 4.859, 1.496, -5)
 mesh = SubResource("PlaneMesh_272bh")
 skeleton = NodePath("../museum")
 surface_material_override/0 = SubResource("StandardMaterial3D_kek77")
@@ -235,3 +194,93 @@ video_stream_player = NodePath("../LargeDisplay/SubViewport/SubViewportContainer
 for_github_pages = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Manager"]
+
+[node name="Spotlights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.62600935, 2.9333878, -5.002507)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+light_energy = 2.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.5, 2.933, -0.45)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.5, 2.933, 5)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 65.0
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.5, 2.933, -5)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 65.0
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.5, 2.933, 5)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 65.0
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.5, 2.933, -5)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 65.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 2.933, -0.45)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.5, 2.933, 0.45)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.5, 2.933, 0.45)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+shadow_enabled = true
+spot_range = 15.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6283909, 2.9333878, -5.002507)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+light_energy = 2.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.6316283, 2.9333878, 4.992162)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+light_energy = 2.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Spotlights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.63411546, 2.9333878, 4.992162)
+light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
+light_energy = 2.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 60.0
