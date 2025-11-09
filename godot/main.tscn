@@ -232,5 +232,6 @@ shape = SubResource("BoxShape3D_1bvp3")
 script = ExtResource("7_272bh")
 api_servers = ["http://localhost:5173", "http://localhost:3000"]
 video_stream_player = NodePath("../LargeDisplay/SubViewport/SubViewportContainer/VideoStreamPlayer")
+for_github_pages = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Manager"]
