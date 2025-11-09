@@ -1,4 +1,9 @@
-<div class="container mt-3" style="height: 100vh;">
+<script lang="ts">
+    import Plan from "./Plan.svelte";
+
+</script>
+
+<div class="container mt-3" style="height: 90vh;">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button
@@ -34,11 +39,10 @@
             aria-labelledby="plan-tab"
             tabindex="0"
         >
-            ...
+            <Plan></Plan>
         </div>
         <div
-            class="tab-pane one"
-            style="height: 90%;"
+            class="tab-pane one h-100"
             id="simulation-tab-pane"
             role="tabpanel"
             aria-labelledby="simulation-tab"
