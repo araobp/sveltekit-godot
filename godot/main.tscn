@@ -355,5 +355,6 @@ fov = 40.0
 script = ExtResource("7_272bh")
 api_servers = Array[String](["http://localhost:3000", "http://localhost:5173"])
 video_stream_player = NodePath("../museum/LargeDisplay/SubViewport/SubViewportContainer/VideoStreamPlayer")
+for_github_page = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Manager"]
