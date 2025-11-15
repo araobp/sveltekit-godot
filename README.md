@@ -34,9 +34,9 @@ Note: You can also enjoy the demo with [this Gemini Live app](https://github.com
 
 The primary goal of this project is to showcase how to build a rich, interactive web experience by combining the strengths of a modern web framework (SvelteKit) with a powerful 3D game engine (Godot). This allows for the creation of immersive 3D visualizations within a standard web application.
 
-<img src="docs/godot-html5.jpg" width=800>
+<img src="docs/room1.jpg" width=800>
 
-The above is a Godot scene in the SvelteKit app
+<img src="docs/room2.jpg" width=800>
 
 
 ## ✨ Features
