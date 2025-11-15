@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnigq4ud4m5qj"]
+[gd_scene load_steps=5 format=3 uid="uid://cnigq4ud4m5qj"]
 
 [ext_resource type="PackedScene" uid="uid://b5eaf2deym5eh" path="res://Panels/display.glb" id="1_ru5jf"]
 [ext_resource type="Script" uid="uid://cq6fexvgmjas1" path="res://Panels/display.gd" id="2_4wxyi"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wxyi"]
+emission_enabled = true
+emission = Color(0.8367553, 0.8367553, 0.8367551, 1)
+emission_energy_multiplier = 0.6
+
+[sub_resource type="TextMesh" id="TextMesh_o566h"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4wxyi")
+text = "..."
+
 [node name="display" instance=ExtResource("1_ru5jf")]
 script = ExtResource("2_4wxyi")
+
+[node name="Text" type="MeshInstance3D" parent="Info/InfoDisplay/InfoScreenLower" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, -3.0479648e-09, 0, 2.0319764e-07, 0.006, 0, -0.30662587, 0.1367117)
+mesh = SubResource("TextMesh_o566h")

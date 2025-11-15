@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch0y8rpv7xamp"
-path="res://.godot/imported/qrcode_Rhine.jpeg-b0aa9c9f33deca696b159d37a2025201.ctex"
+uid="uid://jg8r6qpwhuje"
+path="res://.godot/imported/Schwarzwald.jpg-4a8b41b0e1532e0852251e8f4a1b56fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Rhine.jpeg"
-dest_files=["res://.godot/imported/qrcode_Rhine.jpeg-b0aa9c9f33deca696b159d37a2025201.ctex"]
+source_file="res://Panels/QrCodes/Schwarzwald.jpg"
+dest_files=["res://.godot/imported/Schwarzwald.jpg-4a8b41b0e1532e0852251e8f4a1b56fd.ctex"]
 
 [params]
 

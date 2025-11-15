@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crbfnqgtrykp8"
-path="res://.godot/imported/qrcode_HeidelbergCastle.jpeg-d495fbf2cc9157eb9c0a322923a805a4.ctex"
+uid="uid://csod22d7e7xan"
+path="res://.godot/imported/Neuschwansten.jpg-fcfbe3fa374ef0b5a38c43ed410b08a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_HeidelbergCastle.jpeg"
-dest_files=["res://.godot/imported/qrcode_HeidelbergCastle.jpeg-d495fbf2cc9157eb9c0a322923a805a4.ctex"]
+source_file="res://Panels/QrCodes/Neuschwansten.jpg"
+dest_files=["res://.godot/imported/Neuschwansten.jpg-fcfbe3fa374ef0b5a38c43ed410b08a4.ctex"]
 
 [params]
 

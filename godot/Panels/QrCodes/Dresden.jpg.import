@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csod22d7e7xan"
-path="res://.godot/imported/qrcode_Neuschwansten.jpeg-7d4d3c0164d39065747f2bdb867e3837.ctex"
+uid="uid://dbllpnrru1ru8"
+path="res://.godot/imported/Dresden.jpg-dc3ae1ee5e88781df4649de37336466b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Neuschwansten.jpeg"
-dest_files=["res://.godot/imported/qrcode_Neuschwansten.jpeg-7d4d3c0164d39065747f2bdb867e3837.ctex"]
+source_file="res://Panels/QrCodes/Dresden.jpg"
+dest_files=["res://.godot/imported/Dresden.jpg-dc3ae1ee5e88781df4649de37336466b.ctex"]
 
 [params]
 

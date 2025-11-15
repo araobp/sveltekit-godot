@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbllpnrru1ru8"
-path="res://.godot/imported/qrcode_Dresden.jpeg-673fc571098d4c7495c1dbfc19713afa.ctex"
+uid="uid://briixxj813fiq"
+path="res://.godot/imported/FrankfurtRoemer.jpg-28af5d8c0eea5611244eb6be6ce3e269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Dresden.jpeg"
-dest_files=["res://.godot/imported/qrcode_Dresden.jpeg-673fc571098d4c7495c1dbfc19713afa.ctex"]
+source_file="res://Panels/QrCodes/FrankfurtRoemer.jpg"
+dest_files=["res://.godot/imported/FrankfurtRoemer.jpg-28af5d8c0eea5611244eb6be6ce3e269.ctex"]
 
 [params]
 

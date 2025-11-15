@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btog1dko03t4r"
-path="res://.godot/imported/qrcode_Rothenberg.jpeg-9aa430f941c2b3cedc5c595bd5e17757.ctex"
+uid="uid://b2ae3rnyts55m"
+path="res://.godot/imported/MunichNewTownHall.jpg-46020e0511169949d0c4b4229c681534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Rothenberg.jpeg"
-dest_files=["res://.godot/imported/qrcode_Rothenberg.jpeg-9aa430f941c2b3cedc5c595bd5e17757.ctex"]
+source_file="res://Panels/QrCodes/MunichNewTownHall.jpg"
+dest_files=["res://.godot/imported/MunichNewTownHall.jpg-46020e0511169949d0c4b4229c681534.ctex"]
 
 [params]
 

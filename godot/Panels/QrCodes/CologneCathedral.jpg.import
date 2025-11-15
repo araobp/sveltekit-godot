@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://briixxj813fiq"
-path="res://.godot/imported/qrcode_FrankfurtRoemer.jpeg-368b2e4d41ef0186183865f1af0c1fd2.ctex"
+uid="uid://ba6fwisxmriox"
+path="res://.godot/imported/CologneCathedral.jpg-3318927a0049dd679082d4d368b97f82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_FrankfurtRoemer.jpeg"
-dest_files=["res://.godot/imported/qrcode_FrankfurtRoemer.jpeg-368b2e4d41ef0186183865f1af0c1fd2.ctex"]
+source_file="res://Panels/QrCodes/CologneCathedral.jpg"
+dest_files=["res://.godot/imported/CologneCathedral.jpg-3318927a0049dd679082d4d368b97f82.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ae3rnyts55m"
-path="res://.godot/imported/qrcode_MunichNewTownHall.jpeg-3c7bf957880c5d276c076147867cd853.ctex"
+uid="uid://vjt75v1wpbci"
+path="res://.godot/imported/BrandenburgerGate.jpg-a427e221be5dd2550755077dd528f521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_MunichNewTownHall.jpeg"
-dest_files=["res://.godot/imported/qrcode_MunichNewTownHall.jpeg-3c7bf957880c5d276c076147867cd853.ctex"]
+source_file="res://Panels/QrCodes/BrandenburgerGate.jpg"
+dest_files=["res://.godot/imported/BrandenburgerGate.jpg-a427e221be5dd2550755077dd528f521.ctex"]
 
 [params]
 

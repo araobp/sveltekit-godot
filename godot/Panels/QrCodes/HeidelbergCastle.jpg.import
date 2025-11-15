@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6fwisxmriox"
-path="res://.godot/imported/qrcode_CologneCathedral.jpeg-5d4a5c9f061f94bff69057c8a97a39bd.ctex"
+uid="uid://crbfnqgtrykp8"
+path="res://.godot/imported/HeidelbergCastle.jpg-410dad2fd659ad8dd1e65584c66c927d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_CologneCathedral.jpeg"
-dest_files=["res://.godot/imported/qrcode_CologneCathedral.jpeg-5d4a5c9f061f94bff69057c8a97a39bd.ctex"]
+source_file="res://Panels/QrCodes/HeidelbergCastle.jpg"
+dest_files=["res://.godot/imported/HeidelbergCastle.jpg-410dad2fd659ad8dd1e65584c66c927d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce52eixl5mnoa"
-path="res://.godot/imported/qrcode_Zugspitze.jpeg-f821e1e589471f53d03e2a0e8add2132.ctex"
+uid="uid://ch0y8rpv7xamp"
+path="res://.godot/imported/Rhine.jpg-145ceb4ad23cb23988f6bb79633ef5ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Zugspitze.jpeg"
-dest_files=["res://.godot/imported/qrcode_Zugspitze.jpeg-f821e1e589471f53d03e2a0e8add2132.ctex"]
+source_file="res://Panels/QrCodes/Rhine.jpg"
+dest_files=["res://.godot/imported/Rhine.jpg-145ceb4ad23cb23988f6bb79633ef5ff.ctex"]
 
 [params]
 

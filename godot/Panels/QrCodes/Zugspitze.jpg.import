@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jg8r6qpwhuje"
-path="res://.godot/imported/qrcode_Schwarzwald.jpeg-94f592ececf50e717ab928c3759a6471.ctex"
+uid="uid://ce52eixl5mnoa"
+path="res://.godot/imported/Zugspitze.jpg-b96f22f2056fc30da1201279cfc6eef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/qrcode_Schwarzwald.jpeg"
-dest_files=["res://.godot/imported/qrcode_Schwarzwald.jpeg-94f592ececf50e717ab928c3759a6471.ctex"]
+source_file="res://Panels/QrCodes/Zugspitze.jpg"
+dest_files=["res://.godot/imported/Zugspitze.jpg-b96f22f2056fc30da1201279cfc6eef8.ctex"]
 
 [params]
 
