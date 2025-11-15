@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csod22d7e7xan"
-path="res://.godot/imported/Neuschwansten.jpg-fcfbe3fa374ef0b5a38c43ed410b08a4.ctex"
+path="res://.godot/imported/Neuschwanstein.jpg-0366eec0eb346be1935f17d02e6fbcf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Panels/QrCodes/Neuschwansten.jpg"
-dest_files=["res://.godot/imported/Neuschwansten.jpg-fcfbe3fa374ef0b5a38c43ed410b08a4.ctex"]
+source_file="res://Panels/QrCodes/Neuschwanstein.jpg"
+dest_files=["res://.godot/imported/Neuschwanstein.jpg-0366eec0eb346be1935f17d02e6fbcf2.ctex"]
 
 [params]
 

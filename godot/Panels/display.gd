@@ -4,7 +4,7 @@ func setContent(site, title):
 	var image_path = "res://Panels/Images/{site}.jpg".format({"site": site})
 	var qr_code_path = "res://Panels/QrCodes/{site}.jpg".format({"site": site})
 	setImage(image_path, $Display/Screen, 0, 1.0)
-	setImage(qr_code_path, $Info/InfoDisplay/InfoScreenUpper, 0, 0.5)
+	setImage(qr_code_path, $Info/InfoDisplay/InfoScreenUpper, 0, 1.0)
 	setTitle(title)
 		
 func setImage(res_path, mesh, material_idx, energy):
