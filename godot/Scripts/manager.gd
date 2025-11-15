@@ -3,8 +3,8 @@ extends Node3D
 @export var api_servers: Array[String]
 @export var video_stream_player: VideoStreamPlayer = null
 @export var default_ld_content: String = "germany"
-@export var for_github_page: bool = false
 @export var displays: Node3D = null
+@export var for_github_page: bool = false
 
 const HEADERS = [
 	"Content-Type: application/json"

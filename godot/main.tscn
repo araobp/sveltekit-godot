@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bxydsb3ub7npf"]
+[gd_scene load_steps=41 format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="LightmapGIData" uid="uid://chjm25lleuwcq" path="res://main.lmbake" id="1_272bh"]
 [ext_resource type="Script" uid="uid://b6b6r6vixcghm" path="res://visitor.gd" id="1_ig7tw"]
@@ -13,6 +13,25 @@
 [ext_resource type="Texture2D" uid="uid://bxtivvxe84n8t" path="res://Panels2/Commet.jpg" id="8_w48qg"]
 [ext_resource type="Texture2D" uid="uid://b0trgqy6fyrco" path="res://Panels2/Telescope.jpeg" id="9_vivmo"]
 [ext_resource type="Texture2D" uid="uid://c2expvtg5p0u1" path="res://Panels2/History of Astronomy.jpg" id="10_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://b2kjm80nn2417" path="res://Lights/spot_light.glb" id="14_w48qg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_w48qg"]
+sky_material = SubResource("ProceduralSkyMaterial_ycdy4")
+
+[sub_resource type="Environment" id="Environment_vivmo"]
+sky = SubResource("Sky_w48qg")
+ambient_light_source = 2
+ambient_light_color = Color(0.2665752, 0.26657522, 0.26657513, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_levels/2 = 2.75
+glow_levels/4 = 1.83
+glow_levels/5 = 3.75
+glow_blend_mode = 1
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5vw27"]
 
@@ -74,10 +93,31 @@ size = Vector3(20, 1, 20)
 radius = 0.3
 height = 1.7
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_vivmo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82xsv"]
+albedo_color = Color(0, 0, 0, 0)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+grow = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_getpj"]
+emission_enabled = true
+emission = Color(0.7053739, 0.69438607, 0.65230846, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_ryguw"]
+material = SubResource("StandardMaterial3D_getpj")
+
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vivmo")
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 supersampling = true
+interior = true
 environment_mode = 0
 environment_custom_sky = SubResource("Sky_kek77")
 light_data = ExtResource("1_272bh")
@@ -244,10 +284,10 @@ shape = SubResource("BoxShape3D_1bvp3")
 [node name="Spotlights" type="Node3D" parent="museum"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.62600935, 2.9333878, -5.002507)
+transform = Transform3D(1, -1.8713763e-08, -7.69203e-09, 1.4644286e-11, -4.3815817e-08, 1, 0, -1.0000001, -5.5515557e-08, -0.63278294, 2.8576493, -5.0025163)
 light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
 light_energy = 3.0
-light_indirect_energy = 3.0
+light_indirect_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 spot_range = 15.0
@@ -286,7 +326,7 @@ spot_range = 15.0
 spot_angle = 65.0
 
 [node name="SpotLight3D13" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(0.87789947, -4.033791e-08, 0.47884512, -0.47884518, -2.7852366e-08, 0.87789947, -5.820766e-11, -1.0000001, -4.5060006e-08, -4.3693166, 2.9325871, 7.6707087)
+transform = Transform3D(0.8778994, -4.033791e-08, 0.47884515, -0.47884518, -2.7852366e-08, 0.87789947, -8.731149e-11, -1, -4.5074557e-08, -4.3697734, 2.7616093, 7.670683)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 2.0
 light_bake_mode = 1
@@ -297,7 +337,7 @@ spot_angle = 50.0
 spot_angle_attenuation = 1.6245061
 
 [node name="SpotLight3D16" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(0.8778994, -4.042522e-08, 0.4788452, -0.47884524, -2.7823262e-08, 0.87789947, -1.4551915e-10, -1, -4.5074557e-08, -4.3717723, 2.9334052, 2.3901885)
+transform = Transform3D(0.87789947, -4.0483428e-08, 0.47884518, -0.4788453, -2.780871e-08, 0.87789935, -2.0372681e-10, -1.0000001, -4.5081833e-08, -4.3722277, 2.7633603, 2.3901622)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 2.0
 light_bake_mode = 1
@@ -308,7 +348,7 @@ spot_angle = 50.0
 spot_angle_attenuation = 1.6245061
 
 [node name="SpotLight3D17" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(-0.0050020246, 0.99998754, 6.72919e-05, -0.39643797, -0.0020448063, 0.91805923, 0.9180478, 0.004565495, 0.3964432, -3.3444157, 2.930938, 0.5884932)
+transform = Transform3D(-0.005002025, 0.99998754, 6.729472e-05, -0.396438, -0.0020448067, 0.91805935, 0.91804785, 0.004565496, 0.39644325, -3.3448365, 2.773534, 0.5884691)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 1.8
 light_bake_mode = 1
@@ -319,7 +359,7 @@ spot_angle = 30.0
 spot_angle_attenuation = 1.6245061
 
 [node name="SpotLight3D18" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(-0.005002025, 0.99998754, 6.729447e-05, -0.396438, -0.0020448067, 0.9180593, 0.91804785, 0.004565496, 0.39644322, 3.2970984, 2.9131942, 0.5854036)
+transform = Transform3D(-0.005002025, 0.99998754, 6.729447e-05, -0.396438, -0.0020448067, 0.9180593, 0.91804785, 0.004565496, 0.39644322, 3.2966802, 2.7562566, 0.5873871)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 1.8
 light_bake_mode = 1
@@ -330,7 +370,7 @@ spot_angle = 30.0
 spot_angle_attenuation = 1.6245061
 
 [node name="SpotLight3D15" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(-0.98256093, -8.4548375e-08, -0.18594104, -0.18594104, 5.2956257e-09, 0.98256093, -8.2089244e-08, 1, -2.0924283e-08, 4.511, 2.933, 8.1)
+transform = Transform3D(-0.9825609, -6.868504e-08, -0.1859412, -0.1859412, 8.381903e-09, 0.98256105, -8.216011e-08, 1, -3.5972334e-08, 4.5459275, 2.7448125, 8.099252)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 1.8
 light_bake_mode = 1
@@ -341,7 +381,7 @@ spot_angle = 40.0
 spot_angle_attenuation = 1.6245061
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(-3.3044323e-08, -1, -4.1848576e-08, -0.74865496, -3.0051304e-09, 0.6629599, -0.6629599, 5.32372e-08, -0.74865496, 0, 2.7102504, 8.314)
+transform = Transform3D(-3.207242e-08, -1, -6.1118044e-08, -0.74865496, -8.636874e-09, 0.66296, -0.6629599, 4.8428774e-08, -0.74865496, 0.00021057705, 2.7719073, 8.412555)
 light_color = Color(0.93, 0.93, 0.93, 1)
 light_energy = 3.0
 light_bake_mode = 1
@@ -352,30 +392,30 @@ spot_angle = 60.0
 spot_angle_attenuation = 2.1435487
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6283909, 2.9333878, -5.002507)
+transform = Transform3D(1, -1.8713763e-08, -7.69198e-09, 1.4644286e-11, -4.3728505e-08, 1, 0, -1.0000001, -5.5413693e-08, 0.62818855, 2.8576293, -5.0025187)
 light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
 light_energy = 3.0
-light_indirect_energy = 5.0
+light_indirect_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 60.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.6316283, 2.9333878, 4.992162)
+transform = Transform3D(1, -1.8713763e-08, -7.692016e-09, 1.4644286e-11, -4.3786713e-08, 1, 0, -1.0000001, -5.5486453e-08, -0.6284469, 2.8992155, 4.992056)
 light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
 light_energy = 2.0
-light_indirect_energy = 3.0
+light_indirect_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 60.0
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.63411546, 2.9333878, 4.992162)
+transform = Transform3D(1, -1.8713763e-08, -7.692016e-09, 1.4644286e-11, -4.3786713e-08, 1, 0, -1.0000001, -5.5486453e-08, 0.63729715, 2.8992157, 4.9920554)
 light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
 light_energy = 2.0
-light_indirect_energy = 3.0
+light_indirect_energy = 2.0
 light_bake_mode = 1
 shadow_enabled = true
 spot_range = 15.0
@@ -397,7 +437,118 @@ fov = 40.0
 script = ExtResource("7_272bh")
 api_servers = Array[String](["http://localhost:3000", "http://localhost:5173", "http://192.168.0.196:3000"])
 video_stream_player = NodePath("../museum/LargeDisplay/SubViewport/SubViewportContainer/VideoStreamPlayer")
-for_github_page = true
 displays = NodePath("../museum/Displays")
+for_github_page = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Manager"]
+
+[node name="SpotLights" type="Node3D" parent="."]
+
+[node name="Spot1" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 4.4850664, 2.8429003, 8.099651)
+
+[node name="Cylinder_001" parent="SpotLights/Spot1/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.3204939e-07, 0.50762844, -0.86157596, -0.9999999, -2.4770014e-07, 1.2338987e-07, -1.5077629e-07, 0.861576, 0.50762856, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot1/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="Spot2" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, -0.03021288, 2.8429003, 8.31272)
+
+[node name="Cylinder_001" parent="SpotLights/Spot2/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.932e-07, 0.76907593, -0.63915724, -0.9999999, -3.0939336e-07, 8.644669e-08, -1.312669e-07, 0.6391573, 0.76907617, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot2/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="Spot3" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -4.3813896, 2.8429003, 7.6810675)
+
+[node name="Cylinder_002" parent="SpotLights/Spot3" index="1"]
+transform = Transform3D(0.01242684, 0, 0, 0, -0.0429595, 0, 0, 0, 0.01242684, 0.011665821, 0.054769516, 0.058250904)
+
+[node name="Cylinder_001" parent="SpotLights/Spot3/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.3204939e-07, 0.50762844, -0.86157596, -0.9999999, -2.4770014e-07, 1.2338987e-07, -1.5077629e-07, 0.861576, 0.50762856, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot3/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="Spot4" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -4.3813896, 2.8429003, 2.4017255)
+
+[node name="Cylinder_002" parent="SpotLights/Spot4" index="1"]
+transform = Transform3D(0.01242684, 0, 0, 0, -0.0429595, 0, 0, 0, 0.01242684, 0.011665821, 0.054769516, 0.058250904)
+
+[node name="Cylinder_001" parent="SpotLights/Spot4/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.3204939e-07, 0.50762844, -0.86157596, -0.9999999, -2.4770014e-07, 1.2338987e-07, -1.5077629e-07, 0.861576, 0.50762856, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot4/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="Spot5" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.4098275, 2.8429003, 0.5688021)
+
+[node name="Cylinder_002" parent="SpotLights/Spot5" index="1"]
+transform = Transform3D(0.012426837, 0, 0, 0, -0.0429595, 0, 0, 0, 0.012426837, 0.060629845, 0.054769516, 0.06869942)
+
+[node name="Cylinder_001" parent="SpotLights/Spot5/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.3204939e-07, 0.50762844, -0.86157596, -0.9999999, -2.4770014e-07, 1.2338987e-07, -1.5077629e-07, 0.861576, 0.50762856, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot5/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="Spot6" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.2281668, 2.8429003, 0.5688021)
+
+[node name="Cylinder_002" parent="SpotLights/Spot6" index="1"]
+transform = Transform3D(0.012426837, 0, 0, 0, -0.0429595, 0, 0, 0, 0.012426837, 0.060629845, 0.054769516, 0.06869942)
+
+[node name="Cylinder_001" parent="SpotLights/Spot6/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.3204939e-07, 0.50762844, -0.86157596, -0.9999999, -2.4770014e-07, 1.2338987e-07, -1.5077629e-07, 0.861576, 0.50762856, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot6/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="CeilingLights" type="Node3D" parent="."]
+
+[node name="CeilingLight1" type="MeshInstance3D" parent="CeilingLights"]
+transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, 0.61980754, 2.935392, -4.9999)
+mesh = SubResource("BoxMesh_ryguw")
+
+[node name="CeilingLight2" type="MeshInstance3D" parent="CeilingLights"]
+transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, -0.6287079, 2.935392, -4.9999)
+mesh = SubResource("BoxMesh_ryguw")
+
+[node name="CeilingLight3" type="MeshInstance3D" parent="CeilingLights"]
+transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, 0.61980754, 2.935392, 4.990083)
+mesh = SubResource("BoxMesh_ryguw")
+
+[node name="CeilingLight4" type="MeshInstance3D" parent="CeilingLights"]
+transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, -0.6287079, 2.935392, 4.990083)
+mesh = SubResource("BoxMesh_ryguw")
+
+[editable path="SpotLights/Spot1"]
+[editable path="SpotLights/Spot2"]
+[editable path="SpotLights/Spot3"]
+[editable path="SpotLights/Spot4"]
+[editable path="SpotLights/Spot5"]
+[editable path="SpotLights/Spot6"]
