@@ -25,6 +25,7 @@ The primary goal of this project is to showcase how to build a rich, interactive
 
 <img src="docs/room2.jpg" width=800>
 
+<img src="docs/qr.jpg" width=500>
 
 ## ✨ Features
 
