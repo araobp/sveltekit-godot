@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bxydsb3ub7npf"]
+[gd_scene load_steps=42 format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="LightmapGIData" uid="uid://chjm25lleuwcq" path="res://main.lmbake" id="1_272bh"]
 [ext_resource type="Script" uid="uid://b6b6r6vixcghm" path="res://visitor.gd" id="1_ig7tw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0trgqy6fyrco" path="res://Panels2/Telescope.jpeg" id="9_vivmo"]
 [ext_resource type="Texture2D" uid="uid://c2expvtg5p0u1" path="res://Panels2/History of Astronomy.jpg" id="10_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://b2kjm80nn2417" path="res://Lights/spot_light.glb" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://c5l8tju4eudle" path="res://audio_app.glb" id="15_vivmo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -123,7 +124,6 @@ environment = SubResource("Environment_vivmo")
 [node name="LightmapGI" type="LightmapGI" parent="."]
 supersampling = true
 interior = true
-texel_scale = 2.0
 environment_mode = 0
 environment_custom_sky = SubResource("Sky_kek77")
 light_data = ExtResource("1_272bh")
@@ -139,32 +139,32 @@ offset_bottom = 40.0
 [node name="Forward" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 560.0
-offset_top = 480.0
+offset_top = 512.0
 offset_right = 740.0
-offset_bottom = 840.0
-scale = Vector2(0.178, 0.178)
+offset_bottom = 872.0
+scale = Vector2(0.178, 0.13)
 texture_normal = ExtResource("4_1bvp3")
 texture_pressed = ExtResource("5_lquwl")
 
 [node name="Right" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 656.00006
-offset_top = 544.0
-offset_right = 836.00006
-offset_bottom = 904.0
+offset_left = 640.0
+offset_top = 560.0
+offset_right = 820.0
+offset_bottom = 920.0
 rotation = 1.5707964
-scale = Vector2(0.178, 0.178)
+scale = Vector2(0.178, 0.13)
 texture_normal = ExtResource("4_1bvp3")
 texture_pressed = ExtResource("5_lquwl")
 
 [node name="Left" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 495.99994
-offset_top = 576.00006
-offset_right = 675.99994
-offset_bottom = 936.00006
+offset_left = 512.0
+offset_top = 592.00006
+offset_right = 692.0
+offset_bottom = 952.00006
 rotation = -1.5707964
-scale = Vector2(0.178, 0.178)
+scale = Vector2(0.178, 0.13)
 texture_normal = ExtResource("4_1bvp3")
 texture_pressed = ExtResource("5_lquwl")
 
@@ -175,19 +175,19 @@ offset_top = 640.00006
 offset_right = 772.0
 offset_bottom = 1000.00006
 rotation = 3.1415927
-scale = Vector2(0.178, 0.178)
+scale = Vector2(0.178, 0.13)
 texture_normal = ExtResource("4_1bvp3")
 texture_pressed = ExtResource("5_lquwl")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 24.0
 offset_top = 608.0
-offset_right = 494.0
+offset_right = 376.0
 offset_bottom = 632.0
-text = "Press mouse wheel button to activate camera rotation mode"
+text = "Press mouse wheel button to rotate camera"
 
 [node name="museum" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(0.9999963, -0.002671709, -0.00046522546, 0.0026717884, 0.9999964, 0.00015351406, 0.00046479492, -0.00015474478, 0.99999994, -9.775162e-06, 0.00073188543, -1.1920929e-07)
+transform = Transform3D(0.9999939, -0.0034906515, 0, 0.0034906515, 0.9999939, 0, 0, 0, 1, -9.775162e-06, 0.00073188543, -1.1920929e-07)
 
 [node name="LargePanel1" type="MeshInstance3D" parent="museum"]
 transform = Transform3D(-2.4650944e-08, 1, -4.3789335e-08, -2.1827873e-11, -4.3750752e-08, -1, -0.564, -4.3713953e-08, 4.3655746e-11, -4.942208, 1.4430687, 7.6566596)
@@ -298,16 +298,8 @@ shadow_enabled = true
 spot_range = 15.0
 spot_angle = 60.0
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.5, 2.933, 5)
-light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 65.0
-
 [node name="SpotLight3D10" type="SpotLight3D" parent="museum/Spotlights"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.5, 2.933, -5)
+transform = Transform3D(1, -1.8713763e-08, -7.69198e-09, 1.4644286e-11, -4.3728505e-08, 1, 0, -1.0000001, -5.5413693e-08, -6.500077, 2.904447, -5.000005)
 light_color = Color(0.79911095, 0.7418471, 0.570937, 1)
 light_bake_mode = 1
 shadow_enabled = true
@@ -427,7 +419,7 @@ spot_range = 15.0
 spot_angle = 60.0
 
 [node name="Visitor" type="CharacterBody3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.29503, 0, -5.2309113)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.487855, 0, -6.6519504)
 script = ExtResource("1_ig7tw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visitor"]
@@ -531,10 +523,30 @@ mesh = SubResource("CylinderMesh_vivmo")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
 
+[node name="Spot7" parent="SpotLights" instance=ExtResource("14_w48qg")]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, -6.5232615, 2.7509224, -4.598177)
+
+[node name="Cylinder_001" parent="SpotLights/Spot7/Cylinder_002/Cylinder" index="0"]
+transform = Transform3D(-2.932e-07, 0.76907593, -0.63915724, -0.9999999, -3.0939336e-07, 8.644669e-08, -1.312669e-07, 0.6391573, 0.76907617, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLights/Spot7/Cylinder_002/Cylinder/Cylinder_001" index="1"]
+transform = Transform3D(-0.060000014, -4.7683737e-09, 2.0690112e-09, -1.430512e-08, 0.020000005, 3.6571906e-09, -2.472634e-08, 4.9952855e-09, -0.060000006, 0.00011014938, 0.055197716, 0)
+mesh = SubResource("CylinderMesh_vivmo")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLights/Spot7"]
+transform = Transform3D(1, -6.025869e-08, -2.4085281e-08, 6.025869e-08, 0.7244971, 0.68927795, -2.4085267e-08, -0.68927795, 0.7244971, -0.0081563, -0.05440426, -0.07639599)
+spot_angle = 25.0
+
 [node name="CeilingLights" type="Node3D" parent="."]
 
 [node name="CeilingLight1" type="MeshInstance3D" parent="CeilingLights"]
 transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, 0.61980754, 2.935392, -4.9999)
+mesh = SubResource("BoxMesh_ryguw")
+
+[node name="CeilingLight5" type="MeshInstance3D" parent="CeilingLights"]
+transform = Transform3D(0.2599072, 0, 0, 0, 0.03053938, 0, 0, 0, 0.39282045, -6.4883833, 2.935392, -4.9999)
 mesh = SubResource("BoxMesh_ryguw")
 
 [node name="CeilingLight2" type="MeshInstance3D" parent="CeilingLights"]
@@ -549,9 +561,13 @@ mesh = SubResource("BoxMesh_ryguw")
 transform = Transform3D(-1.1360902e-08, 0, 0.39282042, 0, 0.030539377, 0, -0.25990716, 0, -1.7170725e-08, -0.6287079, 2.935392, 4.990083)
 mesh = SubResource("BoxMesh_ryguw")
 
+[node name="audio_app" parent="." instance=ExtResource("15_vivmo")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.4884944, 1.4286871, -3.137551)
+
 [editable path="SpotLights/Spot1"]
 [editable path="SpotLights/Spot2"]
 [editable path="SpotLights/Spot3"]
 [editable path="SpotLights/Spot4"]
 [editable path="SpotLights/Spot5"]
 [editable path="SpotLights/Spot6"]
+[editable path="SpotLights/Spot7"]
