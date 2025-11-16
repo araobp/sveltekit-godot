@@ -2,8 +2,6 @@
 
 This project demonstrates how Gemini Live can be utilized to provide self-services within museum environments, offering an interactive and engaging experience for visitors.
 
-(Work in Progress)
-
 ## Step 1
 
 Run this simulator on your PC/Mac:
