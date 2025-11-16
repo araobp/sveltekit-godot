@@ -2,20 +2,16 @@
 
 This project demonstrates how Gemini Live can be utilized to provide self-services within museum environments, offering an interactive and engaging experience for visitors.
 
-## Step 1
+## Experience the Gemini-Live-powered Museum!
 
 Run this simulator on your PC/Mac:
 
-=> [Musuem demo on GitHub Page](https://araobp.github.io/godot-museum/demo/)
+=> [Musuem on GitHub Page](https://araobp.github.io/godot-museum/demo/)
 
-## Step 2
+Then scan the QR code with your smartphone's camera in the scene.
 
-Run this voice guidance web app on your smartphone:
+An web app will start when you click on the URL detected by your camera.
 
-=> [Gemini Live web app for the museum](https://araobp.github.io/godot-museum/live/)
+You will need your Gemini API key for the first time. Click on the key icon.
 
-<img src="docs/room1.jpg" width=800>
-
-<img src="docs/room2.jpg" width=800>
-
-<img src="docs/qr.jpg" width=600>
+Enjoy!
