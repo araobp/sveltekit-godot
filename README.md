@@ -2,9 +2,17 @@
 
 (Work in Progress)
 
-=> [Demo](https://araobp.github.io/godot-museum/demo/)
+## Step 1
 
-You can also enjoy the demo with [this Gemini Live app](https://github.com/araobp/sveltekit-gemini-live)
+Run this simulator on your PC/Mac:
+
+=> [Musuem demo on GitHub Page](https://araobp.github.io/godot-museum/demo/)
+
+## Step 2
+
+Run this voice guidance web app on your smartphone:
+
+=> [Gemini Live web app for the museum](https://araobp.github.io/godot-museum/live/)
 
 <img src="docs/room1.jpg" width=800>
 
