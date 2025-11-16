@@ -2,9 +2,8 @@
 
 (Work in Progress)
 
-=> [Demo](https://araobp.github.io/godot-museum/demo/)
-
-You can also enjoy the demo with [this Gemini Live app](https://github.com/araobp/sveltekit-gemini-live)
+=> [Musuem demo on GitHub Page](https://araobp.github.io/godot-museum/demo/)
+=> [Gemini Live web app for the museum](https://araobp.github.io/godot-museum/live/)
 
 <img src="docs/room1.jpg" width=800>
 
