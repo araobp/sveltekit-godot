@@ -1,0 +1,26 @@
+{
+  "name": "live-audio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "@sveltejs/kit": "^2.46.4",
+    "three": "^0.176.0"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.3.3",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@types/node": "^22.14.0",
+    "@vite-pwa/sveltekit": "^1.0.0",
+    "svelte": "^5.39.11",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
