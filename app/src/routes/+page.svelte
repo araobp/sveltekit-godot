@@ -6,6 +6,10 @@
     import { GUTENBERG_BOOKS } from "$lib/scripts.ts";
     import Camera from "../lib/Camera.svelte";
 
+    let dialogElement = $state();
+    let geminiApiKey = $state("");
+    let lang = $state("en-US");
+
     /**
      * Defines the configuration for audio processing, including sample rates for
      * input (microphone) and output (speaker), and the number of output channels.
@@ -124,17 +128,27 @@
         inputNode = inputAudioContext.createGain();
         outputNode = outputAudioContext.createGain();
 
-        initClient("ABC");
+        localStorage.getItem("geminiApiKey")
+            ? (geminiApiKey = localStorage.getItem("geminiApiKey"))
+            : (geminiApiKey = "");
+
+        localStorage.getItem("lang")
+            ? (lang = localStorage.getItem("lang"))
+            : (lang = "en-US");
+
+        initClient(geminiApiKey, lang);
     });
 
     /**
      * Initializes the Google Gemini client and Web Audio API components.
      */
-    const initClient = async (apiKey) => {
+    const initClient = async (apiKey, lang) => {
         // The AudioContext.currentTime property is a read-only value
         // that returns the current time in seconds, measured from the moment
         // the AudioContext was first created.
         nextStartTime = outputAudioContext.currentTime;
+
+        geminiConfig.languageCode = lang;
 
         // Google Gemini Client
         client = new GoogleGenAI({
@@ -156,6 +170,9 @@
      * receiving audio data and managing interruptions.
      */
     const initSession = async () => {
+        
+        session?.close();
+
         // Establish a real-time, bidirectional connection to the Gemini model,
         // setting up callbacks to handle incoming audio data, interruptions,
         // and connection status changes.
@@ -251,8 +268,7 @@
                     },
 
                     onclose: (e) => {
-                        // updateStatus("Close:" + e.reason);
-                        updateStatus("Close: invalid API key or some connection issues");
+                        updateStatus("Close:" + e.reason);
                     },
                 },
                 config: {
@@ -397,7 +413,6 @@
      * immediately initializing a new one.
      */
     const reset = () => {
-        session?.close();
         initSession();
         updateStatus("Session cleared");
     };
@@ -450,6 +465,19 @@
         });
     };
 
+    const onSettingsClick = () => {
+        dialogElement.showModal();
+    };
+
+    const onSettingsModified = () => {
+        dialogElement.close();
+        console.log(geminiApiKey);
+        localStorage.setItem("geminiApiKey", geminiApiKey);
+        localStorage.setItem("lang", lang);
+        initClient(geminiApiKey, lang);
+        updateStatus("Session restarted");
+    };
+
     /**
      * A reactive effect that triggers when a new QR code is successfully scanned.
      * It calls `updateContext` to send the new website URL to the Gemini session,
@@ -469,8 +497,9 @@
 
 <div style="height: 100vh; margin:0; padding:0;">
     <div class="controls">
+        <!--
         <button
-            id="resetButton"
+            class="smallButton"
             onclick={reset}
             disabled={isRecording}
             aria-label="Reset Session"
@@ -487,12 +516,24 @@
                 />
             </svg>
         </button>
+        -->
         <button
-            id="settingsButton"
-            onclick={reset}
+            class="smallButton"
+            onclick={onSettingsClick}
             aria-label="Settings"
         >
-        S
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-key-fill"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+                />
+            </svg>
         </button>
         <button
             id="captureButton"
@@ -592,6 +633,36 @@
     ></Camera>
 </div>
 
+<dialog
+    id="settings"
+    bind:this={dialogElement}
+    style="background-color: gray; color: white;"
+>
+    <h2>Settings</h2>
+    <div>
+        <label for="name">Gemini API Key: </label>
+        <input
+            type="password"
+            id="gemini-api-key"
+            name="gemini-api-key"
+            required
+            minlength="28"
+            size="28"
+            placeholder="Enter you Gemini API Key..."
+            bind:value={geminiApiKey}
+        />
+    </div>
+    <div>
+        <label for="language">Language: </label>
+        <select name="language" id="language" bind:value={lang}>
+            <option value="en-US">English</option>
+            <option value="ja-JP">Japanese</option>
+        </select>
+    </div>
+
+    <button onclick={onSettingsModified}>Save</button>
+</dialog>
+
 <style>
     #status {
         position: absolute;
@@ -634,7 +705,7 @@
         transform: scale(0.95);
     }
 
-    #resetButton {
+    .smallButton {
         outline: none;
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
@@ -654,5 +725,42 @@
 
     button[disabled] {
         display: none;
+    }
+
+    #settings {
+        background-color: darkgray;
+        color: white;
+        font-size: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 12px;
+    }
+
+    #settings h2 {
+        text-align: center;
+    }
+
+    #settings button {
+        background-color: darkslategrey;
+        color: white;
+        width: 128px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 16px;
+    }
+
+    #settings label {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #settings input {
+        font-size: 24px;
+    }
+
+    #settings div {
+        margin-bottom: 24px;
+    }
+
+    #language {
+        font-size: 24px;
     }
 </style>
