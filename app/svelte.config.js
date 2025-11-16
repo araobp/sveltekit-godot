@@ -5,8 +5,7 @@ const config = {
 	kit: {
 		adapter: adapter(
 			{
-				pages: "../docs/live",
-				assets: "../docs/live",
+				pages: "../docs/live"
 			}
 		),
 		paths: {
